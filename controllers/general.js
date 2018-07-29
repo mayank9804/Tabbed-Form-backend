@@ -9,10 +9,9 @@ module.exports = {
             users = await models.User.find({}).select('-_id,-__v').lean();
             for (let e of users) {
                 if (e.dp){
-                    console.log(e.dp.data);
-                    
+                    e.dp.data = await Buffer.from(users.dp.data.buffer).toString('utf8');
                 }
-                    // e.dp.data = await Buffer.from(users.dp.data.data).toString('utf8');
+                    
             }
         } catch (error) {
             res.status(503).send({ message: "Some error occured" });
