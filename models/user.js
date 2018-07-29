@@ -11,7 +11,7 @@ let userSchema = new Schema({
     race:{type:String,required:true},
     sex:{type:String,required:true},
     height:{type:String,required:true},
-    weight:{type:String,required:true},
+    weight:{type:String,required:true}
 })
 
 let User = mongoose.model('User',userSchema);

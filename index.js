@@ -23,7 +23,3 @@ app.listen(process.env.PORT||3000,()=>{
 
 mongoose.connect(`mongodb://${process.env.MLABUSERNAME}:${process.env.MLABPASSWORD}@ds259111.mlab.com:59111/deevesoft`,{ useNewUrlParser: true })
 
-// Available URL's
-
-// /register/
-// /general/fetchProfiles
