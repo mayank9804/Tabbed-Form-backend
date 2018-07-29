@@ -13,7 +13,7 @@ module.exports = {
                 user = new models.User({
                     name: req.body.name,
                     description: req.body.description,
-                    dp: { data: req.body.data.split(',')[1], contentType: req.body.data.split(';')[0].split(':')[1] },
+                    dp: { data: req.body.dp.split(',')[1], contentType: req.body.dp.split(';')[0].split(':')[1] },
                     state: req.body.state,
                     age: req.body.age,
                     ethnicity: req.body.ethnicity,
