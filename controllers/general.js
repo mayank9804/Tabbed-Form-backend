@@ -9,7 +9,8 @@ module.exports = {
             users = await models.User.find({}).select('-_id,-__v').lean();
             for (let e of users) {
                 if (e.dp){
-                    e.dp.data = await Buffer.from(users.dp.data.buffer).toString('utf8');
+                    console.log(users.dp.data.buffer);
+                    e.dp.data = users.dp.data.buffer.toString('utf8');
                 }
                     
             }
