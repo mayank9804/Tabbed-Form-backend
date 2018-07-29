@@ -6,7 +6,12 @@ module.exports={
         // Fetch profiles and send response
         let users;
         try {
-            users = await models.User.find({}).select('-_id,-__v');
+            users = await models.User.find({}).select('-_id,-__v').lean();
+            users.forEach(e=>{
+                if(e.dp){
+                    e.dp.data = Buffer.from(users.dp.data.data).toString('utf8');
+                }
+            })
         } catch (error) {
             res.status(503).send({message:"Some error occured"});
         }
