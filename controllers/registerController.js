@@ -24,7 +24,17 @@ module.exports = {
                 });
             }
             else {
-                user = new models.User(req.body.user);
+                user = new models.User({
+                    name: req.body.name,
+                    description: req.body.description,
+                    state: req.body.state,
+                    age: req.body.age,
+                    ethnicity: req.body.ethnicity,
+                    race: req.body.race,
+                    sex: req.body.sex,
+                    height: req.body.height,
+                    weight: req.body.weight
+                });
             }
             user.save((err, data) => {
                 if (err)
