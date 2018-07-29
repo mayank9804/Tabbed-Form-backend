@@ -42,6 +42,8 @@ module.exports = {
                 res.status(201).send({ message: "Success", user: data });
             })
         } catch (err) {
+            console.log(err);
+            
             res.status(503).send({ message: "Some error occured" })
         }
 
