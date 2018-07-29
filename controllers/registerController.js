@@ -7,6 +7,8 @@ module.exports = {
         // Handle the req and send the response
         try {
             let user;
+            console.log(req.body);
+            
             if (req.body.dp) {
                 user = new models.User({
                     name: req.body.name,
